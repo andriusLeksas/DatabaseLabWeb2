@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DatabaseLabWeb2.Controllers.Models.JobMaterial>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1 class="text-center">Horizontalioji Lower limit</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.material_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount_paid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.material_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount_paid)
+            </td>         
+        </tr>
+}
+    </tbody>
+</table>

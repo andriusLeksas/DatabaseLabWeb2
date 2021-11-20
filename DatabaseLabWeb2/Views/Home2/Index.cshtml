@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DatabaseLabWeb2.Controllers.Models.JobMaterial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Bendra Duomenų bazės lentelė - job_materials</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.material_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendor_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount_paid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.material_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendor_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount_paid)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

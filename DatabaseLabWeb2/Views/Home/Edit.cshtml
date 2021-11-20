@@ -1,0 +1,73 @@
+﻿@model DatabaseLabWeb2.Controllers.Models.Project
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="creation_date" class="control-label"></label>
+                <input asp-for="creation_date" class="form-control" />
+                <span asp-validation-for="creation_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="project_name" class="control-label"></label>
+                <input asp-for="project_name" class="form-control" />
+                <span asp-validation-for="project_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contracted_amount" class="control-label"></label>
+                <input asp-for="contracted_amount" class="form-control" />
+                <span asp-validation-for="contracted_amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="country" class="control-label"></label>
+                <input asp-for="country" class="form-control" />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="notes" class="control-label"></label>
+                <input asp-for="notes" class="form-control" />
+                <span asp-validation-for="notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="current_amount" class="control-label"></label>
+                <input asp-for="current_amount" class="form-control" />
+                <span asp-validation-for="current_amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estimate_amount" class="control-label"></label>
+                <input asp-for="estimate_amount" class="form-control" />
+                <span asp-validation-for="estimate_amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

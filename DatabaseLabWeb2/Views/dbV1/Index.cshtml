@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DatabaseLabWeb2.Models.ProjectV1>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Vertikalios fragmentacijos duomenų bazė 1</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.creation_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.project_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contracted_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.creation_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.project_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contracted_amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>        
+        </tr>
+}
+    </tbody>
+</table>

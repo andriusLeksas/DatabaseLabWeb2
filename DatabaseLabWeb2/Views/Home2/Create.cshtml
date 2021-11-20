@@ -1,0 +1,48 @@
+﻿@model DatabaseLabWeb2.Controllers.Models.JobMaterial
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Create new Job Material</h1>
+
+<h4>JobMaterial</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="material_name" class="control-label"></label>
+                <input asp-for="material_name" class="form-control" />
+                <span asp-validation-for="material_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendor_name" class="control-label"></label>
+                <input asp-for="vendor_name" class="form-control" />
+                <span asp-validation-for="vendor_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="amount_paid" class="control-label"></label>
+                <input asp-for="amount_paid" class="form-control" />
+                <span asp-validation-for="amount_paid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
